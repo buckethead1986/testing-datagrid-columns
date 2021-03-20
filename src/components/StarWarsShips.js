@@ -998,7 +998,8 @@ export const starWarsShips = [
     src:
       "https://images-na.ssl-images-amazon.com/images/I/61nnhfg97NL._AC_UL474_SR474,450_.jpg",
     altsrc: "",
-    packsrc: "",
+    packsrc:
+      "https://images-na.ssl-images-amazon.com/images/I/81jL-ciGETL._AC_SL1500_.jpg",
     backsrc: "",
     model: "DML94",
     assortment: "",
@@ -1186,12 +1187,16 @@ export const starWarsShips = [
     name: "AT-AT Walker",
     year: 2017,
     src:
+      "https://images-na.ssl-images-amazon.com/images/I/81IQBl9uSKL._AC_SL1500_.jpg",
+    altsrc:
       "https://i5.walmartimages.com/asr/3256e83b-b166-4e7c-aed7-be8be2132fbb_1.578ea2444babe7bdfeac9d3a152331c5.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
-    altsrc: "",
-    packsrc: "",
-    backsrc: "",
+    packsrc:
+      "https://images-na.ssl-images-amazon.com/images/I/81Nze3ne-8L._AC_SL1500_.jpg",
+    backsrc:
+      "https://4.bp.blogspot.com/--xVeSPxLxIY/Wf4PV2r7KiI/AAAAAAACe7k/Jeo0gtItWtEV0QQe7MMcE4C6b_2jt1KfgCKgBGAs/s1600/IMG_5901.JPG",
+    altbacksrc: "https://i.ebayimg.com/images/g/mwAAAOSwAjlgUPFA/s-l1600.jpg",
     model: "FPL64",
-    assortment: "",
+    assortment: "FBB03",
     packSize: 1,
     extra: "",
     faction: "Imperial",
@@ -1577,12 +1582,15 @@ export const starWarsShips = [
     id: 83,
     name: "Imperial AT-ACT Cargo Walker",
     year: 2017,
-    src: "https://m.media-amazon.com/images/I/717KKa88XVL.jpg",
-    altsrc: "",
-    packsrc: "",
-    backsrc: "",
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/717KKa88XVL._AC_SL1500_.jpg",
+    altsrc: "https://m.media-amazon.com/images/I/717KKa88XVL.jpg",
+    packsrc:
+      "https://images-na.ssl-images-amazon.com/images/I/91yIPpV4FjL._AC_SL1500_.jpg",
+    backsrc:
+      "https://4.bp.blogspot.com/-IVLQu3uhLIk/WIgdoHQGAKI/AAAAAAAB45E/l3D1eK8ohQ8fZ3z-iPjkkwzNBCHGbgIhgCKgB/s1600/IMG_0820.JPG",
     model: "DXD97",
-    assortment: "",
+    assortment: "DXD96",
     packSize: 1,
     extra: "",
     faction: "Imperial",
