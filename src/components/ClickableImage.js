@@ -23,14 +23,11 @@ const useStyles = makeStyles({
 
 export default function ClickableImage(props) {
   const classes = useStyles();
-  const [open, toggleOpen] = useToggle();
-
-  function useToggle(initialValue = false) {
-    // Returns the tuple [state, dispatch]
-    // Normally with useReducer you pass a value to dispatch to indicate what action to
-    // take on the state, but in this case there's only one action.
-    return useReducer(state => !state, initialValue);
-  }
+  const [open, toggleOpen] = useReducer(state => !state, false);
+  // Normally with useReducer you pass a value to dispatch to indicate what action to
+  // take on the state, but in this case there's only one action.
+  // e.g. const [open, toggleOpen] = useReducer(toggleReducer, true).
+  //'toggleReducer' would only ever return !state, because there aren't multiple actions to select from
 
   return props.src.length !== 0 ? (
     <div>

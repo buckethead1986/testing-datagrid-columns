@@ -18,7 +18,7 @@ const searchbarRegex = string => {
   const atst = /at[^a]?st/i; //Same for AT-ST
   const anyWing = /([xyabu]).?w/i; // x|y|a|b|u-wing. Captures x,y,a,b, or u in string.match(anyWing)
   if (atat.test(string)) {
-    return "at-a"; //not at-at, so 'AT-ACT' matches. Trust me, it's an AT-AT. Working on how to match Heavy Assault Walker as well
+    return "at-at at-act "; //not at-at, so 'AT-ACT' matches. Trust me, it's an AT-AT. Working on how to match Heavy Assault Walker as well
   } else if (atst.test(string)) {
     return "at-st";
   } else if (anyWing.test(string)) {
@@ -30,6 +30,10 @@ const searchbarRegex = string => {
 
 export default function GridItemsContainer(props) {
   const [helpText, toggleHelpText] = useReducer(state => !state, true);
+  // Normally with useReducer you pass a value to dispatch to indicate what action to
+  // take on the state, but in this case there's only one action.
+  // e.g. const [open, toggleHelpText] = useReducer(toggleReducer, true).
+  //'toggleReducer' would only ever return !state, because there aren't multiple actions to select from
 
   //Filters ships based on searchbarValue. Returns an array of exact matches, or an array of partial matches if there are no exact matches.
   const searchbarMatches = () => {

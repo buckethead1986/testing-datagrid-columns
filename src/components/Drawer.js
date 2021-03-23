@@ -87,9 +87,11 @@ const useStyles = makeStyles(theme => ({
 export default function ResponsiveDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = useReducer(state => !state, true);
-  //   // Normally with useReducer you pass a value to dispatch to indicate what action to
-  //   // take on the state, but in this case there's only one action.
+  const [open, toggleOpen] = useReducer(state => !state, true);
+  // Normally with useReducer you pass a value to dispatch to indicate what action to
+  // take on the state, but in this case there's only one action.
+  // e.g. const [open, toggleOpen] = useReducer(toggleReducer, true).
+  //'toggleReducer' would only ever return !state, because there aren't multiple actions to select from
 
   //creates expandable lists of filter options.
   const createDrawerLists = [
@@ -156,7 +158,7 @@ export default function ResponsiveDrawer(props) {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={setOpen}
+            onClick={toggleOpen}
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
@@ -177,7 +179,7 @@ export default function ResponsiveDrawer(props) {
         }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={setOpen}>
+          <IconButton onClick={toggleOpen}>
             <ChevronLeft />
           </IconButton>
         </div>

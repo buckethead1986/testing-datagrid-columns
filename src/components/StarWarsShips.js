@@ -1921,25 +1921,6 @@ export const starWarsShips = [
   },
   {
     id: 102,
-    name: "Imperial Shuttle",
-    year: 2019,
-    src:
-      "https://i5.walmartimages.com/asr/752b2866-8d5f-4110-9738-98689600c243_1.8403387212ce60186467e213b90d2905.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
-    altsrc: "",
-    packsrc:
-      "https://images-na.ssl-images-amazon.com/images/I/91zps%2BhRL4L._AC_SL1500_.jpg",
-    backsrc:
-      "https://images-na.ssl-images-amazon.com/images/I/911%2BvxZ70TL._AC_SL1500_.jpg",
-    model: "GGY74",
-    assortment: "FYT65",
-    packSize: 1,
-    extra: "",
-    faction: "Imperial",
-    class: "",
-    type: "Shuttle"
-  },
-  {
-    id: 103,
     name: "Han Solo's Speeder",
     year: 2018,
     src: "https://m.media-amazon.com/images/I/81k9v4Q4e2L.jpg",
@@ -1955,7 +1936,7 @@ export const starWarsShips = [
     type: "Speeder"
   },
   {
-    id: 104,
+    id: 103,
     name: "Imperial Arrestor Cruiser",
     year: 2018,
     src: "https://images.mattel.com/scene7/FJF25_01?$oslarge$&wid=549&hei=549",
@@ -1971,7 +1952,7 @@ export const starWarsShips = [
     type: "Capital Ship"
   },
   {
-    id: 105,
+    id: 104,
     name: "Imperial AT-Hauler",
     year: 2018,
     src:
@@ -1989,7 +1970,7 @@ export const starWarsShips = [
     type: "Walker, Shuttle"
   },
   {
-    id: 106,
+    id: 105,
     name: "B-Wing Fighter",
     year: 2018,
     src:
@@ -2008,7 +1989,7 @@ export const starWarsShips = [
     type: "Fighter"
   },
   {
-    id: 107,
+    id: 106,
     name: "First Order AT-ST",
     year: 2018,
     src:
@@ -2027,7 +2008,7 @@ export const starWarsShips = [
     type: "Walker"
   },
   {
-    id: 108,
+    id: 107,
     name: "Jango Fett's Slave I",
     year: 2018,
     src:
@@ -2046,7 +2027,7 @@ export const starWarsShips = [
     type: "Fighter"
   },
   {
-    id: 109,
+    id: 108,
     name: "Landspeeder",
     year: 2018,
     src:
@@ -2064,7 +2045,7 @@ export const starWarsShips = [
     type: "Speeder"
   },
   {
-    id: 110,
+    id: 109,
     name: "Millenium Falcon",
     year: 2018,
     src:
@@ -2081,7 +2062,7 @@ export const starWarsShips = [
     type: "Fighter"
   },
   {
-    id: 111,
+    id: 110,
     name: "Star Destroyer",
     year: 2018,
     src:
@@ -2098,7 +2079,7 @@ export const starWarsShips = [
     type: "Capital Ship"
   },
   {
-    id: 112,
+    id: 111,
     name: "TIE Fighter",
     year: 2018,
     src:
@@ -2115,7 +2096,7 @@ export const starWarsShips = [
     type: "Fighter"
   },
   {
-    id: 113,
+    id: 112,
     name: "X-Wing Fighter",
     year: 2018,
     src:
@@ -2132,7 +2113,7 @@ export const starWarsShips = [
     type: "Fighter"
   },
   {
-    id: 114,
+    id: 113,
     name: "General Grievous Wheel Bike",
     year: 2018,
     src:
@@ -2149,7 +2130,7 @@ export const starWarsShips = [
     type: "Walker"
   },
   {
-    id: 115,
+    id: 114,
     name: "TIE Bomber",
     year: 2018,
     src:
@@ -2166,7 +2147,7 @@ export const starWarsShips = [
     type: "Fighter"
   },
   {
-    id: 116,
+    id: 115,
     name: "Sandcrawler",
     year: 2018,
     src:
@@ -2181,6 +2162,25 @@ export const starWarsShips = [
     faction: "Unaffiliated",
     class: "",
     type: "Walker"
+  },
+  {
+    id: 116,
+    name: "Imperial Shuttle",
+    year: 2019,
+    src:
+      "https://i5.walmartimages.com/asr/752b2866-8d5f-4110-9738-98689600c243_1.8403387212ce60186467e213b90d2905.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
+    altsrc: "",
+    packsrc:
+      "https://images-na.ssl-images-amazon.com/images/I/91zps%2BhRL4L._AC_SL1500_.jpg",
+    backsrc:
+      "https://images-na.ssl-images-amazon.com/images/I/911%2BvxZ70TL._AC_SL1500_.jpg",
+    model: "GGY74",
+    assortment: "FYT65",
+    packSize: 1,
+    extra: "",
+    faction: "Imperial",
+    class: "",
+    type: "Shuttle"
   },
   {
     id: 117,
@@ -2220,7 +2220,7 @@ export const starWarsShips = [
   },
   {
     id: 119,
-    name: "Y-Wing Starfighter Gold Leader",
+    name: "Resistance Y-Wing Fighter",
     year: 2019,
     src:
       "https://i5.walmartimages.com/asr/4563a5f6-f077-48af-b03c-c3d4bade1f61_1.c4992d957070263669f8ea7e8f2c771f.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
@@ -2233,13 +2233,13 @@ export const starWarsShips = [
     assortment: "FYT65",
     packSize: 1,
     extra: "",
-    faction: "Rebel",
+    faction: "Resistance",
     class: "Y-Wing",
     type: "Fighter"
   },
   {
     id: 120,
-    name: "Y-Wing Starfighter Gold Leader",
+    name: "Resistance Y-Wing Fighter",
     year: 2019,
     src:
       "https://i5.walmartimages.com/asr/4563a5f6-f077-48af-b03c-c3d4bade1f61_1.c4992d957070263669f8ea7e8f2c771f.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
@@ -2252,7 +2252,7 @@ export const starWarsShips = [
     assortment: "FYT65",
     packSize: 1,
     extra: "White Card Variant",
-    faction: "Rebel",
+    faction: "Resistance",
     class: "Y-Wing",
     type: "Fighter"
   },

@@ -67,87 +67,6 @@ export default function StarWarsDataGrid(props) {
     }
   ].concat(textColumns, imageColumns);
 
-  //This is the longhand version of the column definitions. Similar columns were combined into const's textColumns and imageColumns (above), and generated using .map
-  // const longhandColumns = [
-  //   {
-  //     field: "name",
-  //     headerName: "Name",
-  //     flex: 0.8,
-  //     renderCell: params => <Typography>{params.value}</Typography> //<Typography> has own styling and renders larger
-  //   },
-  //   {
-  //     field: "year",
-  //     headerName: "Year",
-  //     flex: 0.3
-  //   },
-  //   { field: "model", headerName: "Model", flex: 0.3 },
-  //   {
-  //     field: "faction",
-  //     headerName: "Faction",
-  //     flex: 0.4,
-  //     renderCell: params => (
-  //       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
-  //     )
-  //   },
-  //   {
-  //     field: "class",
-  //     headerName: "Class",
-  //     flex: 0.4,
-  //     renderCell: params => (
-  //       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
-  //     )
-  //   },
-  //   {
-  //     field: "type",
-  //     headerName: "Type",
-  //     flex: 0.4,
-  //     renderCell: params => (
-  //       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
-  //     )
-  //   },
-  //   {
-  //     field: "extra",
-  //     headerName: "Extra",
-  //     flex: 0.5,
-  //     renderCell: params => (
-  //       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
-  //     )
-  //   },
-  //   {
-  //     field: "src",
-  //     headerName: "Image",
-  //     width: 100,
-  //     disableColumnMenu: true,
-  //     cellClassName: "less-padding-for-image-cells",
-  //     sortable: false,
-  //     renderCell: params => (
-  //       <ClickableImage src={params.value} alt={params.getValue("name")} />
-  //     )
-  //   },
-  //   {
-  //     field: "packsrc",
-  //     headerName: "Pack",
-  //     width: 100,
-  //     disableColumnMenu: true,
-  //     cellClassName: "less-padding-for-image-cells",
-  //     sortable: false,
-  //     renderCell: params => (
-  //       <ClickableImage src={params.value} alt={params.getValue("name")} />
-  //     )
-  //   },
-  //   {
-  //     field: "backsrc",
-  //     headerName: "Reverse",
-  //     width: 100,
-  //     disableColumnMenu: true,
-  //     cellClassName: "less-padding-for-image-cells",
-  //     sortable: false,
-  //     renderCell: params => (
-  //       <ClickableImage src={params.value} alt={params.getValue("name")} />
-  //     )
-  //   }
-  // ];
-
   //default height for DataGrid is 0. This is a workaround I found to enable content to load below the grid
   const gridWrapperRef = react.useRef(null);
   react.useLayoutEffect(() => {
@@ -173,3 +92,84 @@ export default function StarWarsDataGrid(props) {
     </div>
   );
 }
+
+//This is the longhand version of the column definitions. Similar columns were combined into const's textColumns and imageColumns (above), and generated using .map
+// const longhandColumns = [
+//   {
+//     field: "name",
+//     headerName: "Name",
+//     flex: 0.8,
+//     renderCell: params => <Typography>{params.value}</Typography> //<Typography> has own styling and renders larger
+//   },
+//   {
+//     field: "year",
+//     headerName: "Year",
+//     flex: 0.3
+//   },
+//   { field: "model", headerName: "Model", flex: 0.3 },
+//   {
+//     field: "faction",
+//     headerName: "Faction",
+//     flex: 0.4,
+//     renderCell: params => (
+//       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
+//     )
+//   },
+//   {
+//     field: "class",
+//     headerName: "Class",
+//     flex: 0.4,
+//     renderCell: params => (
+//       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
+//     )
+//   },
+//   {
+//     field: "type",
+//     headerName: "Type",
+//     flex: 0.4,
+//     renderCell: params => (
+//       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
+//     )
+//   },
+//   {
+//     field: "extra",
+//     headerName: "Extra",
+//     flex: 0.5,
+//     renderCell: params => (
+//       <Typography style={{ fontSize: "0.9rem" }}>{params.value}</Typography>
+//     )
+//   },
+//   {
+//     field: "src",
+//     headerName: "Image",
+//     width: 100,
+//     disableColumnMenu: true,
+//     cellClassName: "less-padding-for-image-cells",
+//     sortable: false,
+//     renderCell: params => (
+//       <ClickableImage src={params.value} alt={params.getValue("name")} />
+//     )
+//   },
+//   {
+//     field: "packsrc",
+//     headerName: "Pack",
+//     width: 100,
+//     disableColumnMenu: true,
+//     cellClassName: "less-padding-for-image-cells",
+//     sortable: false,
+//     renderCell: params => (
+//       <ClickableImage src={params.value} alt={params.getValue("name")} />
+//     )
+//   },
+//   {
+//     field: "backsrc",
+//     headerName: "Reverse",
+//     width: 100,
+//     disableColumnMenu: true,
+//     cellClassName: "less-padding-for-image-cells",
+//     sortable: false,
+//     renderCell: params => (
+//       <ClickableImage src={params.value} alt={params.getValue("name")} />
+//     )
+//   }
+// ];

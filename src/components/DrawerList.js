@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -18,29 +18,77 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const initialState = {
+  open: false,
+  checked: []
+};
+
+const listItemsReducer = (state, action) => {
+  switch (action.type) {
+    case "TOGGLE_OPEN":
+      return {
+        ...state,
+        open: !state.open
+      };
+    case "TOGGLE_CHECKED":
+      return {
+        ...state,
+        checked: action.checked
+      };
+    default:
+      return { state };
+  }
+};
+
 export default function DrawerList(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const [checked, setChecked] = React.useState([]);
+
+  // ---------- useReducer version for tracking checked selections ----------
+  // Requires 'state.open' and 'state.checked' in makeListItems and return()
+  const [state, dispatch] = useReducer(listItemsReducer, initialState);
 
   const handleOpen = () => {
-    setOpen(!open);
+    dispatch({ type: "TOGGLE_OPEN" });
   };
 
-  const handleToggle = (item, value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+  const handleChecked = (item, value) => () => {
+    const currentIndex = state.checked.indexOf(value);
+    const newChecked = [...state.checked];
 
     if (currentIndex === -1) {
       newChecked.push(value);
     } else {
       newChecked.splice(currentIndex, 1);
     }
-
-    setChecked(newChecked);
-    // props.handleShipFilter(item, props.name); //useState
-    props.handleFilterSelection(props.name, item); //useReducer
+    dispatch({ type: "TOGGLE_CHECKED", checked: newChecked });
+    props.handleFilterSelection(props.name, item);
   };
+  //----------
+
+  // ---------- useState version for tracking checked selections ----------
+  // Requires 'open' and 'checked' in makeListItems and return()
+
+  // const [open, setOpen] = React.useState(false);
+  // const [checked, setChecked] = React.useState([]);
+  //
+  // const handleOpen = () => {
+  //   setOpen(!open);
+  // };
+  //
+  // const handleChecked = (item, value) => () => {
+  //   const currentIndex = checked.indexOf(value);
+  //   const newChecked = [...checked];
+  //
+  //   if (currentIndex === -1) {
+  //     newChecked.push(value);
+  //   } else {
+  //     newChecked.splice(currentIndex, 1);
+  //   }
+  //   setChecked(newChecked);
+  //   props.handleFilterSelection(props.name, item);
+  // };
+
+  //----------
 
   const makeListItems = (
     <List>
@@ -49,7 +97,7 @@ export default function DrawerList(props) {
         return (
           <ListItem
             button
-            onClick={handleToggle(item, index)}
+            onClick={handleChecked(item, index)}
             key={item}
             className={classes.nested}
           >
@@ -59,7 +107,7 @@ export default function DrawerList(props) {
             <ListItemText primary={item} />
             <Checkbox
               edge="end"
-              checked={checked.indexOf(index) !== -1}
+              checked={state.checked.indexOf(index) !== -1}
               inputProps={{ "aria-labelledby": labelId }}
             />
           </ListItem>
@@ -75,9 +123,9 @@ export default function DrawerList(props) {
           <props.icon />
         </ListItemIcon>
         <ListItemText primary={props.primary} />
-        {open ? <ExpandLess /> : <ExpandMore />}
+        {state.open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={state.open} timeout="auto" unmountOnExit>
         {makeListItems}
       </Collapse>
     </List>
