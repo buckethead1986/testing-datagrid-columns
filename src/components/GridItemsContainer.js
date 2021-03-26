@@ -18,7 +18,7 @@ const searchbarRegex = string => {
   const atst = /at[^a]?st/i; //Same for AT-ST
   const anyWing = /([xyabu]).?w/i; // x|y|a|b|u-wing. Captures x,y,a,b, or u in string.match(anyWing)
   if (atat.test(string)) {
-    return "at-at at-act "; //not at-at, so 'AT-ACT' matches. Trust me, it's an AT-AT. Working on how to match Heavy Assault Walker as well
+    return "at-at"; //not at-at, so 'AT-ACT' matches. Trust me, it's an AT-AT. Working on how to match Heavy Assault Walker as well
   } else if (atst.test(string)) {
     return "at-st";
   } else if (anyWing.test(string)) {
@@ -30,23 +30,22 @@ const searchbarRegex = string => {
 
 export default function GridItemsContainer(props) {
   const [helpText, toggleHelpText] = useReducer(state => !state, true);
-  // Normally with useReducer you pass a value to dispatch to indicate what action to
-  // take on the state, but in this case there's only one action.
-  // e.g. const [open, toggleHelpText] = useReducer(toggleReducer, true).
-  //'toggleReducer' would only ever return !state, because there aren't multiple actions to select from
+  //No separate reducer function needed, as there's only one action to take on the state, toggling state to !state
+  //useState would be fine, but I decided to use useReducer throughout this App
 
   //Filters ships based on searchbarValue. Returns an array of exact matches, or an array of partial matches if there are no exact matches.
   const searchbarMatches = () => {
     const exactMatch = [];
     const partialMatch = [];
+    const searchBarSpellcheck = searchbarRegex(
+      props.searchbarValue
+    ).toLowerCase();
     starWarsShips.forEach(item => {
       if (item.name === props.searchbarValue) {
         exactMatch.push(item);
       }
       if (
-        item.name
-          .toLowerCase()
-          .includes(searchbarRegex(props.searchbarValue).toLowerCase()) ||
+        item.name.toLowerCase().includes(searchBarSpellcheck) ||
         item.model.toLowerCase().includes(props.searchbarValue.toLowerCase())
       ) {
         partialMatch.push(item);

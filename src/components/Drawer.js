@@ -16,7 +16,6 @@ import Category from "@material-ui/icons/Category";
 import Menu from "@material-ui/icons/Menu";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import DrawerList from "./DrawerList.js";
-// import Searchbar from "../UnusedComponents/Searchbar.js";
 import AutoCompleteSearchbar from "./AutoCompleteSearchbar.js";
 import GridItemsContainer from "./GridItemsContainer.js";
 
@@ -88,10 +87,8 @@ export default function ResponsiveDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, toggleOpen] = useReducer(state => !state, true);
-  // Normally with useReducer you pass a value to dispatch to indicate what action to
-  // take on the state, but in this case there's only one action.
-  // e.g. const [open, toggleOpen] = useReducer(toggleReducer, true).
-  //'toggleReducer' would only ever return !state, because there aren't multiple actions to select from
+  //No separate reducer function needed, as there's only one action to take on the state, toggling state to !state
+  //useState would be fine, but I decided to use useReducer throughout this App
 
   //creates expandable lists of filter options.
   const createDrawerLists = [

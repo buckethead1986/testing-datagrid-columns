@@ -1939,9 +1939,12 @@ export const starWarsShips = [
     id: 103,
     name: "Imperial Arrestor Cruiser",
     year: 2018,
-    src: "https://images.mattel.com/scene7/FJF25_01?$oslarge$&wid=549&hei=549",
-    altsrc: "",
-    packsrc: "",
+    src:
+      "https://images-na.ssl-images-amazon.com/images/I/8183BEcCrUL._AC_SL1500_.jpg",
+    altsrc:
+      "https://images.mattel.com/scene7/FJF25_01?$oslarge$&wid=549&hei=549",
+    packsrc:
+      "https://images-na.ssl-images-amazon.com/images/I/81gWhO-WuTL._AC_SL1500_.jpg",
     backsrc: "",
     model: "FJF25",
     assortment: "",
@@ -1967,7 +1970,7 @@ export const starWarsShips = [
     extra: "",
     faction: "Imperial",
     class: "",
-    type: "Walker, Shuttle"
+    type: "Shuttle"
   },
   {
     id: 105,
